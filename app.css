@@ -1,0 +1,128 @@
+@font-face {
+  font-family: bm;
+  src: url(./font/BlackMango-Black.otf);
+}
+
+body {
+  background: url(./img/stars-bg.png);
+  background-attachment: fixed;
+
+  background-color: black;
+  color: rgb(184, 182, 182);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.shadow {
+  filter: drop-shadow(-20px 0px 1.75em rgb(44, 115, 165));
+}
+
+
+
+.starts {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+}
+
+.star1 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: #0f172a;
+  animation: starFall1 5s ease-in-out infinite;
+}
+@keyframes starFall1 {
+  from {
+    transform: translateY(-10px) rotate(12deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(1vh) translateX(calc(1px + 5vw)) rotate(720deg);
+    opacity: 0;
+  }
+}
+.star2 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: #38bdf8;
+  animation: starFall2 5s ease-in-out infinite;
+}
+@keyframes starFall2 {
+  from {
+    transform: translateY(-10px) rotate(30deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-5vh) translateX(calc(1px + 5vw)) rotate(549deg);
+    opacity: 0;
+  }
+}
+.star3 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: #475569;
+  animation: starFall3 5s ease-in-out infinite;
+}
+@keyframes starFall3 {
+  from {
+    transform: translateY(4px) rotate(6deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(5vh) translateX(calc(1px + 13vw)) rotate(72deg);
+    opacity: 0;
+  }
+}
+.star4 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: #475569;
+  animation: starFall4 5s ease-in-out infinite;
+}
+@keyframes starFall4 {
+  from {
+    transform: translateY(-10px) rotate(-12deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-1vh) translateX(calc(1px - 5vw)) rotate(-720deg);
+    opacity: 0;
+  }
+}
+.star5 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: #475569;
+  animation: starFall5 5s ease-in-out infinite;
+}
+@keyframes starFall5 {
+  from {
+    transform: translateY(-4px) rotate(38deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-34vh) translateX(calc(5px + 20vw)) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+.animate-bounce-c{
+    animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(2%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
