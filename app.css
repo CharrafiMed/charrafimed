@@ -17,7 +17,20 @@ body {
   filter: drop-shadow(-20px 0px 1.75em rgb(44, 115, 165));
 }
 
-
+@media (max-width: 767px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .w-full {
+      width: 100%;
+    }
+  
+    .w-full img {
+      order: -1; /* Move the image to the top */
+      margin-bottom: 20px; /* Add some space between the image and text */
+    }
+  }
 
 .starts {
   width: 100%;
