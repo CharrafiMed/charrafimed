@@ -4,625 +4,107 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charrafi Med</title>
+    <title>Charrafi Mohamed</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="app.css" />
   </head>
-  <body class="bg-stars-bg max-w-5xl mx-auto font-serif px-6">
-    <header>
-      <nav class="flex items-center justify-between p-4">
-        <div class="flex items-center">
-          <img class="w-8 h-8 mr-2 rounded-full" src="./img/neon.jpg" alt="" />
-          <div class="text-white font-semibold">Charrafi-Mohamed</div>
-        </div>
-        <ul class="flex gap-8">
-          <li><a href="#clients" class="text-white">Clients</a></li>
-          <li><a href="#contact-me" class="text-white">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="section-one min-h-screen flex items-center">
-      <div
-        class="container mx-auto px-4 md:flex md:justify-between md:items-center"
-      >
-        <div class="md:order-2 md:w-1/2 flex mb-12 md:mb-0 justify-center">
-          <img
-            src="./img/abstract-person.png"
-            alt=""
-            class="gold w-64 h-64 shadow md:w-72 md:h-72"
-          />
-        </div>
-        <div class="md:order-1 md:w-1/2 text-center md:text-left">
-          <div class="title">
-            <h1 class="text-3xl text-white font-bold">Charrafi Mohamed</h1>
-          </div>
-
-          <p class="text-lg text-gray-300 text-center md:text-left mb-3">
-            As a Full Stack Developer, I specialize in utilizing Laravel for my
-            development. My proficiency spans across the entire technology
-            stack, enabling me to create robust and efficient web solutions with
-            a focus on reliability and scalability.
-          </p>
-
+  <body class="text-gray-100 max-w-2xl m-auto">
+    <main class="p-6 pt-3 md:pt-6 min-h-screen">
+      <header class="flex mb-5 md:mb-10 items-center">
+        <span class="text-md md:text-lg whitespace-nowrap font-bold"
+          ><a
+            class=" active:bg-gray-300 dark:active:bg-[#242424] p-2 rounded-sm -ml-2 transition-[background-color]"
+            href="/"
+            >CHARRAFI MOHAMED</a
+          ></span
+        >
+        <nav
+          class="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3"
+        >
           <a
-            href="#contact-me"
-            class="bg-gradient-to-r pt-3 mt-3 from-blue-900 to-blue-600 text-white px-6 py-3 mt-4 rounded-md hover:bg-gradient-to-r hover:from-blue-800 hover:to-blue-500 transition duration-300 w-96"
+            href="https://x.com/charrafimed"
+            target="_blank"
+            class="inline-flex  active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              style="margin-right: 4px"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                d="M8.28 20.26c7.55 0 11.68-6.26 11.68-11.67v-.53c.8-.58 1.49-1.3 2.04-2.13-.74.33-1.53.54-2.36.65.85-.5 1.5-1.32 1.8-2.28-.78.48-1.66.81-2.6 1a4.1 4.1 0 0 0-7 3.74c-3.4-.17-6.43-1.8-8.46-4.29a4.1 4.1 0 0 0 1.28 5.48c-.68-.02-1.3-.2-1.86-.5v.05a4.11 4.11 0 0 0 3.29 4.02 4 4 0 0 1-1.85.08 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.43a11.67 11.67 0 0 0 6.28 1.83"
+              ></path>
+            </svg>
+            Follow
+            <span class="hidden md:inline">&nbsp;me</span></a
           >
-            Contact Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="text-center">
-      <h1 class="font-bold text-3xl">My Main Stacks :</h1>
-    </div>
-    <div>
-      <h2 class="text-xl pl-20">
-        <span class="text-cyan-500 px-2">//</span> Tall Stack :
+        </nav>
+      </header>
+      
+      <a href="https://x.com/charrafimed" target="_blank"
+        ><img
+          alt="Guillermo Rauch"
+          width="160"
+          height="160"
+          class="rounded-md bg-gray-100 block mt-2 mb-5 mx-auto sm:float-right sm:ml-5 sm:mb-5 grayscale hover:grayscale-0"
+          style="color: transparent"
+          src="/img/me.jpg"
+      /></a>
+       Hi! I’m <strong>Charrafi Mohamed</strong>, a <span id="age"></span>-year-old
+      
+      
+      
+      
+      
+      <h2 class="group font-bold text-xl my-8 relative">
+        Technical contributions
       </h2>
-    </div>
-    <div
-      class="mx-auto z-10 mb-40 backdrop-blur-3xl w-full max-w-screen-lg overflow-x-clip px-5 pt-20"
+      
+    </main>
+    <footer
+      class="p-6 pt-3 pb-6 flex text-xs text-center mt-3 dark:text-gray-400 text-gray-500 font-mono"
     >
-      <div>
-        <div class="relative min-[630px]:grid">
-          <div
-            class="absolute right-1/2 top-32 hidden h-[18rem] w-[18rem] translate-x-1/3 self-center justify-self-center rounded-full bg-gradient-to-bl from-black to-sky-500/80 min-[630px]:block min-[700px]:relative min-[700px]:right-0 min-[700px]:top-0 min-[700px]:translate-x-0 min-[700px]:[grid-area:1/-1]"
-          >
-            <div
-              class="tall-link-wrapper group/tall-link absolute -right-36 -top-16 z-20"
-            >
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                class="flex items-center gap-3 transition duration-300 group-hover/tall-link:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover/tall-link:transform-none"
-              >
-                <svg
-                  class="w-7"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 54 33"
-                >
-                  <g clip-path="url(#prefix__clip0)">
-                    <path
-                      fill="#38bdf8"
-                      fill-rule="evenodd"
-                      d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-                      clip-rule="evenodd"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="prefix__clip0">
-                      <path fill="#fff" d="M0 0h54v32.4H0z" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <div class="flex items-end">
-                  <span class="text-2xl font-bold">T</span>
-                  <span
-                    class="relative -left-0.5 text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    ailwind CSS
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div
-              class="tall-link-wrapper group/tall-link absolute -right-[11.5rem] top-7 z-20"
-            >
-              <a
-                href="https://alpinejs.dev"
-                target="_blank"
-                class="flex items-center gap-3 transition duration-300 group-hover/tall-link:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover/tall-link:transform-none"
-              >
-                <svg
-                  class="scale-90"
-                  width="32"
-                  height="16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="m24.657.653 7.045 7.066-7.045 7.066-7.044-7.066L24.657.653Z"
-                    fill="#77C1D2"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="m7.045.653 14.605 14.65H7.56L0 7.718 7.045.653Z"
-                    fill="#2D3441"
-                  />
-                </svg>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">A</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    lpine.js
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div
-              class="tall-link-wrapper group/tall-link absolute -right-48 top-[8.5rem] z-20"
-            >
-              <a
-                href="https://laravel.com"
-                target="_blank"
-                class="flex items-center gap-3 transition duration-300 group-hover/tall-link:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover/tall-link:transform-none"
-              >
-                <svg
-                  width="23"
-                  height="25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M22.37 6.03a.38.38 0 0 1 .013.095v5.045a.375.375 0 0 1-.181.319l-4.151 2.438v4.831a.376.376 0 0 1-.181.32l-8.665 5.088c-.02.012-.041.018-.062.026-.009.003-.017.008-.025.01a.355.355 0 0 1-.185 0c-.01-.002-.019-.008-.028-.012a.322.322 0 0 1-.06-.024L.181 19.078a.375.375 0 0 1-.18-.32V3.625c0-.033.003-.065.012-.096.002-.012.009-.021.012-.031.007-.02.014-.04.024-.058.006-.012.016-.021.024-.032.01-.015.02-.03.032-.043.01-.011.024-.019.036-.028.013-.01.024-.022.04-.031L4.513.76a.357.357 0 0 1 .36 0l4.332 2.544h.001c.015.01.026.022.04.032.012.01.025.017.035.028.013.012.022.028.032.043.008.01.018.02.025.032.01.018.016.038.023.058.004.01.01.02.013.03a.38.38 0 0 1 .012.097v9.452l3.61-2.12V6.125a.38.38 0 0 1 .013-.096c.003-.011.009-.02.013-.03.007-.02.013-.04.023-.058.007-.012.017-.022.025-.032.01-.015.02-.03.032-.043.01-.011.023-.019.035-.028.013-.01.025-.023.04-.031l4.333-2.545a.356.356 0 0 1 .36 0l4.332 2.544c.015.01.027.021.04.031.012.01.025.018.036.028.012.013.021.029.032.043.008.011.018.02.024.033.01.018.017.038.024.057.004.01.01.02.012.031Zm-.709 4.927V6.762l-1.516.89-2.094 1.23v4.195l3.61-2.12Zm-4.332 7.588v-4.197l-2.06 1.2-5.883 3.424v4.237l7.943-4.664ZM.722 4.261v14.285l7.942 4.664v-4.237l-4.149-2.395v-.001h-.003c-.014-.009-.025-.02-.038-.031-.012-.01-.025-.017-.035-.027v-.001c-.012-.012-.02-.026-.03-.039-.01-.012-.02-.023-.027-.035v-.002c-.009-.014-.014-.03-.02-.046-.006-.014-.013-.026-.017-.041-.005-.018-.005-.037-.007-.055-.002-.014-.006-.027-.006-.041V6.38L2.24 5.151l-1.517-.89Zm3.971-2.756-3.608 2.12 3.608 2.119 3.609-2.12-3.609-2.119ZM6.57 14.73l2.094-1.23V4.262l-1.516.89-2.094 1.23v9.24l1.516-.89ZM17.69 4.006l-3.609 2.12 3.609 2.118 3.608-2.119-3.608-2.119Zm-.361 4.876-2.094-1.23-1.516-.89v4.195l2.094 1.23 1.516.89V8.882Zm-8.304 9.453 5.293-3.082 2.646-1.54-3.606-2.118-4.153 2.438-3.784 2.222 3.604 2.08Z"
-                    fill="#FF2D20"
-                  />
-                </svg>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">L</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    aravel
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div
-              class="tall-link-wrapper group/tall-link absolute -right-[10rem] top-64 z-20"
-            >
-              <a
-                href="https://livewire.laravel.com"
-                target="_blank"
-                class="flex items-center gap-3 transition duration-300 group-hover/tall-link:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover/tall-link:transform-none"
-              >
-                <svg
-                  width="24"
-                  height="27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M22.415 17.96c-.438.662-.77 1.478-1.66 1.478-1.5 0-1.58-2.31-3.08-2.31-1.498 0-1.417 2.31-2.916 2.31-1.498 0-1.579-2.31-3.078-2.31-1.5 0-1.418 2.31-2.916 2.31-1.499 0-1.58-2.31-3.079-2.31s-1.418 2.31-2.916 2.31c-.471 0-.802-.228-1.081-.541A12.796 12.796 0 0 1 0 12.507C0 5.663 5.287.115 11.809.115c6.521 0 11.808 5.548 11.808 12.392 0 1.957-.432 3.807-1.202 5.453Z"
-                    fill="#FB70A9"
-                  />
-                  <path
-                    d="M7.093 16.737v5.132a1.668 1.668 0 1 1-3.336 0v-6.196c.312-.571.667-1.066 1.308-1.066 1.044 0 1.408 1.31 2.028 2.13Zm6.3.267v8.117a1.853 1.853 0 0 1-3.706 0v-9.187c.35-.673.709-1.327 1.446-1.327 1.167 0 1.485 1.64 2.26 2.397Zm5.93-.149v5.892a1.668 1.668 0 0 1-3.335 0v-7.242c.29-.497.636-.898 1.213-.898 1.096 0 1.443 1.445 2.122 2.248Z"
-                    fill="#4E56A6"
-                  />
-                  <path
-                    d="M7.093 18.31c-.296-.362-.646-.631-1.152-.631-1.203 0-1.424 1.515-2.183 2.199V13.34a1.668 1.668 0 1 1 3.335 0v4.97Zm6.3.117c-.315-.42-.684-.748-1.244-.748-1.337 0-1.46 1.876-2.462 2.394v-2.89a1.853 1.853 0 1 1 3.707 0v1.244Zm5.93-.325c-.256-.253-.56-.423-.965-.423-1.296 0-1.451 1.76-2.37 2.342v-5.869a1.668 1.668 0 0 1 3.335 0v3.95Z"
-                    fill="#000"
-                    fill-opacity=".299"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M22.415 17.96c-.438.662-.77 1.478-1.66 1.478-1.5 0-1.58-2.31-3.08-2.31-1.498 0-1.417 2.31-2.916 2.31-1.498 0-1.579-2.31-3.078-2.31-1.5 0-1.418 2.31-2.916 2.31-1.499 0-1.58-2.31-3.079-2.31s-1.418 2.31-2.916 2.31c-.471 0-.802-.228-1.081-.541A12.796 12.796 0 0 1 0 12.507C0 5.663 5.287.115 11.809.115c6.521 0 11.808 5.548 11.808 12.392 0 1.957-.432 3.807-1.202 5.453Z"
-                    fill="#FB70A9"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.86 19.191c3.094-4.603 3.174-9.71.24-15.319a12.36 12.36 0 0 1 3.517 8.66c0 1.95-.448 3.794-1.246 5.434-.454.66-.799 1.472-1.721 1.472-.316 0-.571-.095-.79-.247Z"
-                    fill="#E24CA6"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.175 15.598c4.107 0 5.836-2.382 5.836-5.765 0-3.384-2.613-6.498-5.835-6.498-3.223 0-5.836 3.114-5.836 6.498 0 3.383 1.73 5.765 5.835 5.765Z"
-                    fill="#fff"
-                  />
-                  <path
-                    d="M9.607 10.024c1.208 0 2.188-1.081 2.188-2.415s-.98-2.416-2.188-2.416c-1.21 0-2.189 1.082-2.189 2.416 0 1.334.98 2.415 2.189 2.415Z"
-                    fill="#030776"
-                  />
-                  <path
-                    d="M9.242 8.166c.604 0 1.094-.499 1.094-1.115 0-.615-.49-1.114-1.094-1.114-.605 0-1.095.499-1.095 1.114 0 .616.49 1.115 1.095 1.115Z"
-                    fill="#fff"
-                  />
-                </svg>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">L</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    ivewire
-                  </span>
-                </div>
-              </a>
-            </div>
-            <svg
-              width="64"
-              class="absolute right-[0rem] top-[1.2rem] z-20 -rotate-[3deg] stroke-sky-600/90"
-              height="204"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M38.922 201.284A162.725 162.725 0 0 0 55.179 77.807C49.648 57.166 40.5 40.5 27.096 24.5 20.5 17.5 10 7.5 2.5 2.5"
-                stroke-width="5"
-                stroke-linecap="round"
-              />
-            </svg>
-            <svg
-              class="absolute -right-16 -top-16 w-72 rotate-2 stroke-sky-500"
-              width="311"
-              height="333"
-              viewBox="0 0 311 333"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4.5657 39.2978L1.02603 32.2428"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M21.0291 32.4878L18.0974 25.1593"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M38.3956 26.6808L36.0169 19.1546"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M56.1667 22.3201L55.1266 14.4958"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M73.0567 21.2073L72.7763 13.3191"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M90.426 19.2023V1.55276"
-                stroke="#F1E3E3"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M106.899 20.379L108.076 12.1426"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M124.832 22.7794L126.635 15.095"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M142.198 26.7314L144.568 19.2024"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M158.671 32.0909L161.024 25.0856"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M173.967 38.7672L177.497 32.1453"
-                stroke="#F1E3E3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M190.44 47.4417L199.853 32.1454"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M204.129 57.0277L208.582 49.9995"
-                stroke-linecap="round"
-              />
-              <path
-                d="M219.497 66.5752L224.295 60.3074"
-                stroke-linecap="round"
-              />
-              <path
-                d="M231.622 79.2213L236.872 73.3276"
-                stroke-linecap="round"
-              />
-              <path
-                d="M243.389 91.6934L249.272 86.2707"
-                stroke-linecap="round"
-              />
-              <path d="M253.979 104.98L259.915 100.39" stroke-linecap="round" />
-              <path
-                d="M264.569 120.393L278.688 112.157"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M270.978 134.731L278.559 131.303"
-                stroke-linecap="round"
-              />
-              <path
-                d="M278.576 151.15L286.028 148.548"
-                stroke-linecap="round"
-              />
-              <path
-                d="M283.394 168.323L291.019 166.282"
-                stroke-linecap="round"
-              />
-              <path
-                d="M286.924 185.232L294.819 183.932"
-                stroke-linecap="round"
-              />
-              <path
-                d="M289.278 203.333L296.76 202.758"
-                stroke-linecap="round"
-              />
-              <path
-                d="M290.454 220.407L309.281 220.407"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M289.277 238.057L297.578 238.62"
-                stroke-linecap="round"
-              />
-              <path
-                d="M287.481 255.814L295.278 257.043"
-                stroke-linecap="round"
-              />
-              <path
-                d="M283.611 272.049L291.295 273.854"
-                stroke-linecap="round"
-              />
-              <path
-                d="M278.73 288.618L286.302 291.204"
-                stroke-linecap="round"
-              />
-              <path
-                d="M272.249 304.505L279.114 307.535"
-                stroke-linecap="round"
-              />
-              <path
-                d="M264.569 321.598L279.865 331.011"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
-          <div
-            class="flex flex-wrap items-start gap-14 self-center pt-10 min-[600px]:gap-10 min-[630px]:pt-0 min-[700px]:justify-self-center min-[700px]:[grid-area:1/-1]"
-          >
-            <div
-              class="flex w-full flex-wrap items-start justify-around gap-10 min-[600px]:w-auto min-[600px]:flex-col min-[630px]:hidden"
-            >
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                class="group/tall-link flex items-center gap-3 transition duration-300 motion-reduce:transition-none"
-              >
-                <div class="grid w-8 place-items-center">
-                  <svg
-                    class="w-7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 54 33"
-                  >
-                    <g clip-path="url(#prefix__clip0)">
-                      <path
-                        fill="#38bdf8"
-                        fill-rule="evenodd"
-                        d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-                        clip-rule="evenodd"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="prefix__clip0">
-                        <path fill="#fff" d="M0 0h54v32.4H0z" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="flex items-end">
-                  <span class="text-2xl font-bold">T</span>
-                  <span
-                    class="relative -left-0.5 text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    ailwind CSS
-                  </span>
-                </div>
-              </a>
-              <a
-                href="https://alpinejs.dev"
-                target="_blank"
-                class="group/tall-link flex items-center gap-3 transition duration-300 motion-reduce:transition-none"
-              >
-                <div class="grid w-8 place-items-center">
-                  <svg
-                    class="scale-90"
-                    width="32"
-                    height="16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="m24.657.653 7.045 7.066-7.045 7.066-7.044-7.066L24.657.653Z"
-                      fill="#77C1D2"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="m7.045.653 14.605 14.65H7.56L0 7.718 7.045.653Z"
-                      fill="#2D3441"
-                    />
-                  </svg>
-                </div>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">A</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    Alpine.js
-                  </span>
-                </div>
-              </a>
-              <a
-                href="https://laravel.com"
-                target="_blank"
-                class="group/tall-link flex items-center gap-3 transition duration-300 motion-reduce:transition-none"
-              >
-                <div class="grid w-8 place-items-center">
-                  <svg
-                    width="23"
-                    height="25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M22.37 6.03a.38.38 0 0 1 .013.095v5.045a.375.375 0 0 1-.181.319l-4.151 2.438v4.831a.376.376 0 0 1-.181.32l-8.665 5.088c-.02.012-.041.018-.062.026-.009.003-.017.008-.025.01a.355.355 0 0 1-.185 0c-.01-.002-.019-.008-.028-.012a.322.322 0 0 1-.06-.024L.181 19.078a.375.375 0 0 1-.18-.32V3.625c0-.033.003-.065.012-.096.002-.012.009-.021.012-.031.007-.02.014-.04.024-.058.006-.012.016-.021.024-.032.01-.015.02-.03.032-.043.01-.011.024-.019.036-.028.013-.01.024-.022.04-.031L4.513.76a.357.357 0 0 1 .36 0l4.332 2.544h.001c.015.01.026.022.04.032.012.01.025.017.035.028.013.012.022.028.032.043.008.01.018.02.025.032.01.018.016.038.023.058.004.01.01.02.013.03a.38.38 0 0 1 .012.097v9.452l3.61-2.12V6.125a.38.38 0 0 1 .013-.096c.003-.011.009-.02.013-.03.007-.02.013-.04.023-.058.007-.012.017-.022.025-.032.01-.015.02-.03.032-.043.01-.011.023-.019.035-.028.013-.01.025-.023.04-.031l4.333-2.545a.356.356 0 0 1 .36 0l4.332 2.544c.015.01.027.021.04.031.012.01.025.018.036.028.012.013.021.029.032.043.008.011.018.02.024.033.01.018.017.038.024.057.004.01.01.02.012.031Zm-.709 4.927V6.762l-1.516.89-2.094 1.23v4.195l3.61-2.12Zm-4.332 7.588v-4.197l-2.06 1.2-5.883 3.424v4.237l7.943-4.664ZM.722 4.261v14.285l7.942 4.664v-4.237l-4.149-2.395v-.001h-.003c-.014-.009-.025-.02-.038-.031-.012-.01-.025-.017-.035-.027v-.001c-.012-.012-.02-.026-.03-.039-.01-.012-.02-.023-.027-.035v-.002c-.009-.014-.014-.03-.02-.046-.006-.014-.013-.026-.017-.041-.005-.018-.005-.037-.007-.055-.002-.014-.006-.027-.006-.041V6.38L2.24 5.151l-1.517-.89Zm3.971-2.756-3.608 2.12 3.608 2.119 3.609-2.12-3.609-2.119ZM6.57 14.73l2.094-1.23V4.262l-1.516.89-2.094 1.23v9.24l1.516-.89ZM17.69 4.006l-3.609 2.12 3.609 2.118 3.608-2.119-3.608-2.119Zm-.361 4.876-2.094-1.23-1.516-.89v4.195l2.094 1.23 1.516.89V8.882Zm-8.304 9.453 5.293-3.082 2.646-1.54-3.606-2.118-4.153 2.438-3.784 2.222 3.604 2.08Z"
-                      fill="#FF2D20"
-                    />
-                  </svg>
-                </div>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">L</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    aravel
-                  </span>
-                </div>
-              </a>
-              <a
-                href="https://laravel-livewire.com"
-                target="_blank"
-                class="group/tall-link flex items-center gap-3 transition duration-300 motion-reduce:transition-none"
-              >
-                <div class="grid w-8 place-items-center">
-                  <svg
-                    width="24"
-                    height="27"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M22.415 17.96c-.438.662-.77 1.478-1.66 1.478-1.5 0-1.58-2.31-3.08-2.31-1.498 0-1.417 2.31-2.916 2.31-1.498 0-1.579-2.31-3.078-2.31-1.5 0-1.418 2.31-2.916 2.31-1.499 0-1.58-2.31-3.079-2.31s-1.418 2.31-2.916 2.31c-.471 0-.802-.228-1.081-.541A12.796 12.796 0 0 1 0 12.507C0 5.663 5.287.115 11.809.115c6.521 0 11.808 5.548 11.808 12.392 0 1.957-.432 3.807-1.202 5.453Z"
-                      fill="#FB70A9"
-                    />
-                    <path
-                      d="M7.093 16.737v5.132a1.668 1.668 0 1 1-3.336 0v-6.196c.312-.571.667-1.066 1.308-1.066 1.044 0 1.408 1.31 2.028 2.13Zm6.3.267v8.117a1.853 1.853 0 0 1-3.706 0v-9.187c.35-.673.709-1.327 1.446-1.327 1.167 0 1.485 1.64 2.26 2.397Zm5.93-.149v5.892a1.668 1.668 0 0 1-3.335 0v-7.242c.29-.497.636-.898 1.213-.898 1.096 0 1.443 1.445 2.122 2.248Z"
-                      fill="#4E56A6"
-                    />
-                    <path
-                      d="M7.093 18.31c-.296-.362-.646-.631-1.152-.631-1.203 0-1.424 1.515-2.183 2.199V13.34a1.668 1.668 0 1 1 3.335 0v4.97Zm6.3.117c-.315-.42-.684-.748-1.244-.748-1.337 0-1.46 1.876-2.462 2.394v-2.89a1.853 1.853 0 1 1 3.707 0v1.244Zm5.93-.325c-.256-.253-.56-.423-.965-.423-1.296 0-1.451 1.76-2.37 2.342v-5.869a1.668 1.668 0 0 1 3.335 0v3.95Z"
-                      fill="#000"
-                      fill-opacity=".299"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M22.415 17.96c-.438.662-.77 1.478-1.66 1.478-1.5 0-1.58-2.31-3.08-2.31-1.498 0-1.417 2.31-2.916 2.31-1.498 0-1.579-2.31-3.078-2.31-1.5 0-1.418 2.31-2.916 2.31-1.499 0-1.58-2.31-3.079-2.31s-1.418 2.31-2.916 2.31c-.471 0-.802-.228-1.081-.541A12.796 12.796 0 0 1 0 12.507C0 5.663 5.287.115 11.809.115c6.521 0 11.808 5.548 11.808 12.392 0 1.957-.432 3.807-1.202 5.453Z"
-                      fill="#FB70A9"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M19.86 19.191c3.094-4.603 3.174-9.71.24-15.319a12.36 12.36 0 0 1 3.517 8.66c0 1.95-.448 3.794-1.246 5.434-.454.66-.799 1.472-1.721 1.472-.316 0-.571-.095-.79-.247Z"
-                      fill="#E24CA6"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M11.175 15.598c4.107 0 5.836-2.382 5.836-5.765 0-3.384-2.613-6.498-5.835-6.498-3.223 0-5.836 3.114-5.836 6.498 0 3.383 1.73 5.765 5.835 5.765Z"
-                      fill="#fff"
-                    />
-                    <path
-                      d="M9.607 10.024c1.208 0 2.188-1.081 2.188-2.415s-.98-2.416-2.188-2.416c-1.21 0-2.189 1.082-2.189 2.416 0 1.334.98 2.415 2.189 2.415Z"
-                      fill="#030776"
-                    />
-                    <path
-                      d="M9.242 8.166c.604 0 1.094-.499 1.094-1.115 0-.615-.49-1.114-1.094-1.114-.605 0-1.095.499-1.095 1.114 0 .616.49 1.115 1.095 1.115Z"
-                      fill="#fff"
-                    />
-                  </svg>
-                </div>
-                <div class="flex items-end gap-px">
-                  <span class="text-2xl font-bold">L</span>
-                  <span
-                    class="text-lg transition duration-500 motion-reduce:transition-none"
-                  >
-                    ivewire
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="grow text-left">
+        Charrafi mohamed (<a
+          class="border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-gray-500 dark:hover:border-white"
+          target="_blank"
+          href="https://twitter.com/rauchg"
+          >@charrafimed</a
+        >)
       </div>
-    </div>
-    <div class="title mt-[400px] md:mt-0" id="clients">
-      <h1 class="text-4xl text-white">Clients:</h1>
-    </div>
-
-    <section class="py-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-3 justify-center">
-      <div
-        class="border  rounded-lg   bg-gray-800/30 z-10 border-gray-700/80"
-      >
-        <a href="https://play3dgame.com">
-          <img class="rounded-t-lg" src="./img/play3dgame.png" />
-        </a>
-        <div class="px-5">
-          <a href="#">
-            <h5
-              class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-            >
-              Play3dgame
-            </h5>
-          </a>
-          <p class="font-normal text-gray-700 dark:text-gray-400">
-            a website specializing in online browser games, meaning you can play
-            them directly through your web browser without any downloads
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class=" space-y-4 md:flex items-center mt-8 mb-40 justify-between" id="contact-me">
-      <div class="font-bold">Contact Me:</div>
       <div>
-        <span class="mr-2">via email:</span>
-        <a href="mailto:charrafimohamed27@gmail.com" class="text-blue-500"
-          >charrafimohamed27@gmail.com</a
+        <a
+          class="border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-gray-500 dark:hover:border-white"
+          target="_blank"
+          href="https://github.com/rauchg/blog"
+          >Source</a
         >
       </div>
-      <div>
-        <span class="mr-2">via phone:</span>
-        <span class="text-blue-500">+212 682-582143</span>
-      </div>
-      <div>
-        <a href="https://www.linkedin.com/in/mohamed-charrafi-bbbb0a284/" class="mr-2 underline text-blue-500">LinkedIn</a>
-      </div>
-    </div>
+    </footer>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
   <script src="./script.js"></script>
+ 
+  <script>
+    const birthDate = new Date('2003-11-23');
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const hasHadBirthdayThisYear = 
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  
+    if (!hasHadBirthdayThisYear) {
+      age--;
+    }
+    document.getElementById('age').textContent = age;
+  </script>
+
+  </body>
+
 </html>
