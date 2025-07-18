@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="text-gray-100 max-w-2xl m-auto bg-[#202020] min-h-screen flex items-center justify-center  ">
+<body class="text-gray-100 max-w-4xl m-auto bg-[#202020] min-h-screen flex items-center justify-center  ">
   <main class="p-6 pt-3 md:pt-6 min-h-screen">
     <header class="flex mb-5 md:mb-10 items-center ">
       <span class="text-md md:text-lg whitespace-nowrap font-bold"><a
@@ -58,9 +58,12 @@
       </li>
 
 
-      <li>
+      <li >
         <p>I built the <a href="https://convergephp.com/plugins/gsm/docs/overview"
             class="underline text-blue-500 font-bold mx-0.5 leading-5">Global Search Modal</a> package for FilamentPHP
+        <img src="https://img.shields.io/packagist/dt/charrafimed/global-search-modal" 
+          alt="Total Downloads" 
+          class="inline-block ml-1 align-middle">
         </p>
       </li>
       <li>
@@ -85,11 +88,15 @@
       <li><a href="https://www.linkedin.com/in/mohamed-charrafi">LinkedIn</a></li>
     </ul>
   </main>
-
+  <footer class="fixed bottom-0 right-0 mb-2 mr-4">2023 - <span id="currentY"/></footer>
 </body>
 
 <script src="./script.js"></script>
 
+<script>
+  document.getElementById('currentY').textContent = new Date().getFullYear();
+</script>
+<!-- my age programmatically -->
 <!-- <script>
     const birthDate = new Date('2003-11-23');
     const today = new Date();
