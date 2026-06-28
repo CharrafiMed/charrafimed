@@ -2,351 +2,682 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Charrafi | Software Developer</title>
-  <meta name="description" content="Mohamed Charrafi is a software engineer, applied mathematics. Explore my projects and achievements." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>charrafi@dev:~$</title>
+  <meta name="description" content="Mohamed Charrafi — Software Developer. Open-source. Laravel. Applied Mathematics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #00e676;
+      --green-dim: #00b84d;
+      --green-ghost: rgba(0,230,118,0.07);
+      --amber: #ffb300;
+      --amber-dim: #cc8f00;
+      --cyan: #00e5ff;
+      --red: #ff5252;
+      --gray: #888;
+      --gray-light: #aaa;
+      --bg: #0d0d0d;
+      --bg-card: #111;
+      --bg-card-hover: #141414;
+      --border: rgba(0,230,118,0.15);
+      --border-hover: rgba(0,230,118,0.4);
+      --font: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
     }
 
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradient 8s ease infinite;
-    }
-    
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    
-    .stagger-1 { animation-delay: 0.1s; opacity: 0; }
-    .stagger-2 { animation-delay: 0.2s; opacity: 0; }
-    .stagger-3 { animation-delay: 0.3s; opacity: 0; }
-    .stagger-4 { animation-delay: 0.4s; opacity: 0; }
-    .stagger-5 { animation-delay: 0.5s; opacity: 0; }
-    
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .glow {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-    }
-    
-    .project-card {
-      transition: all 0.3s ease;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-    }
-    
-    .skill-badge {
-      transition: all 0.3s ease;
-    }
-    
-    .skill-badge:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Custom cursor */
+    html { scroll-behavior: smooth; }
+
     body {
-      cursor: none;
+      font-family: var(--font);
+      background: var(--bg);
+      color: #c8c8c8;
+      min-height: 100vh;
+      line-height: 1.7;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
     }
-    
-    a, button {
-      cursor: none;
+
+    ::selection { background: rgba(0,230,118,0.25); color: #fff; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0d0d0d; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+    /* ── Layout ── */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
     }
-    
-    .cursor {
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(59, 130, 246, 0.8);
-      border-radius: 50%;
-      position: fixed;
+    .topbar-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .tab-btn {
+      height: 44px;
+      padding: 0 16px;
+      background: none;
+      border: none;
+      color: var(--gray);
+      font-family: var(--font);
+      font-size: 12px;
+      cursor: pointer;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--green-dim); }
+    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+    .topbar-spacer { flex: 1; }
+    .topbar-prompt {
+      font-size: 11px;
+      color: var(--gray);
+    }
+    .topbar-prompt .host { color: var(--green-dim); }
+    .topbar-prompt .sep { color: var(--gray); }
+
+    /* ── Section ── */
+    section {
+      padding-top: 72px;
+    }
+
+    /* ── Prompt line ── */
+    .prompt {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .prompt .user { color: var(--green); font-weight: 700; }
+    .prompt .at   { color: var(--gray); }
+    .prompt .host { color: var(--cyan); }
+    .prompt .path { color: var(--amber); }
+    .prompt .dollar { color: var(--gray-light); }
+    .prompt .cmd { color: #fff; }
+    .prompt .flag { color: var(--amber-dim); }
+    .prompt .arg  { color: var(--cyan); }
+
+    /* ── ASCII Header ── */
+    .ascii-block {
+      margin: 40px 0 8px;
+      color: var(--green);
+      font-size: 11px;
+      line-height: 1.2;
+      white-space: pre;
+      overflow-x: auto;
+      letter-spacing: 0;
+    }
+
+    /* ── Output block ── */
+    .output {
+      margin: 6px 0 28px 0;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* ── Inline bits ── */
+    .g  { color: var(--green); }
+    .a  { color: var(--amber); }
+    .c  { color: var(--cyan); }
+    .r  { color: var(--red); }
+    .w  { color: #fff; }
+    .dim{ color: var(--gray); }
+
+    /* ── About / whoami ── */
+    .whoami-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 6px 20px;
+    }
+    .whoami-key { color: var(--amber); }
+    .whoami-val { color: #ddd; }
+    .whoami-comment { color: var(--gray); font-style: italic; }
+
+    /* ── Math display ── */
+    .math-block {
+      margin: 10px 0;
+      padding: 12px 16px;
+      background: rgba(255,179,0,0.04);
+      border-left: 2px solid var(--amber-dim);
+      font-size: 13px;
+      line-height: 2;
+    }
+    .math-comment { color: var(--gray); font-style: italic; }
+    .math-var { color: var(--amber); }
+    .math-op  { color: var(--gray-light); }
+    .math-val { color: var(--cyan); }
+    .math-fn  { color: var(--green-dim); }
+
+    /* ── Skills matrix ── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .skills-table th {
+      color: var(--amber);
+      font-weight: 500;
+      text-align: left;
+      padding: 4px 12px 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills-table td {
+      padding: 5px 12px 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: #ccc;
+    }
+    .skills-table td:first-child { color: var(--green-dim); }
+
+    .bar-wrap { display: flex; align-items: center; gap: 8px; }
+    .bar {
+      height: 4px;
+      background: var(--green);
+      border-radius: 2px;
+      display: inline-block;
+      opacity: 0.85;
+    }
+    .bar-bg {
+      width: 80px;
+      height: 4px;
+      background: #1e1e1e;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .pct { color: var(--gray); font-size: 11px; }
+
+    /* ── Project cards ── */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .project-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+    }
+    .project-card::before {
+      content: attr(data-index);
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      color: #2a2a2a;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
       pointer-events: none;
-      z-index: 9999;
-      transition: all 0.15s ease;
-      transform: translate(-50%, -50%);
     }
-    
-    .cursor-follower {
-      width: 40px;
-      height: 40px;
-      background: rgba(59, 130, 246, 0.1);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transition: all 0.3s ease;
-      transform: translate(-50%, -50%);
+    .proj-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
     }
-    
-    .cursor.hover {
-      width: 40px;
-      height: 40px;
-      background: rgba(59, 130, 246, 0.2);
-      border-color: rgba(59, 130, 246, 1);
+    .proj-name { color: var(--green); font-weight: 700; font-size: 14px; text-decoration: none; }
+    .proj-name:hover { color: #fff; text-decoration: underline; }
+    .proj-tag {
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 2px;
+      border: 1px solid;
     }
-    
-    .cursor-follower.hover {
-      width: 60px;
-      height: 60px;
+    .tag-php  { color: var(--amber-dim); border-color: rgba(255,179,0,0.3); }
+    .tag-js   { color: var(--cyan);      border-color: rgba(0,229,255,0.3); }
+    .tag-md   { color: #c792ea;          border-color: rgba(199,146,234,0.3); }
+    .tag-pkg  { color: var(--green-dim); border-color: rgba(0,230,118,0.3); }
+    .tag-fil  { color: #ff6f61;          border-color: rgba(255,111,97,0.3); }
+
+    .proj-desc { color: var(--gray-light); font-size: 12.5px; line-height: 1.6; margin-bottom: 8px; }
+    .proj-meta { font-size: 11px; color: var(--gray); }
+    .proj-meta a { color: var(--gray); text-decoration: none; }
+    .proj-meta a:hover { color: var(--amber); }
+    .badge-img { height: 16px; vertical-align: middle; filter: brightness(0.85); }
+
+    /* ── Connect section ── */
+    .connect-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .connect-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--green-dim);
+      text-decoration: none;
+      font-size: 12px;
+      transition: all 0.2s;
     }
-    
-    
+    .connect-link:hover {
+      border-color: var(--border-hover);
+      color: var(--green);
+    }
+    .connect-link .arrow { color: var(--gray); transition: color 0.2s; }
+    .connect-link:hover .arrow { color: var(--green); }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .footer .prompt-line { display: flex; align-items: center; gap: 8px; }
+    .blink {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--green);
+      animation: blink 1.1s step-start infinite;
+      vertical-align: middle;
+      border-radius: 1px;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── Section label ── */
+    .sec-label {
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Typing anim ── */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal {
+      opacity: 0;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .ascii-block { font-size: 8px; }
+      .whoami-grid { grid-template-columns: 90px 1fr; gap: 4px 12px; }
+      .tab-btn { padding: 0 10px; font-size: 11px; }
+    }
   </style>
 </head>
+<body>
 
-<body class="bg-gradient-to-br from-[#0f0f0f] via-[#1a1a2e] to-[#16213e] text-gray-100 min-h-screen">
-  <!-- Custom cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-  
-  <!-- Animated background elements -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute w-96 h-96 bg-blue-500/10 blur-3xl -top-48 -left-48 animate-float"></div>
-    <div class="absolute w-96 h-96 bg-orange-500/10 blur-3xl -bottom-48 -right-48 animate-float" style="animation-delay: 3s;"></div>
-  </div>
+  <!-- Top bar / nav -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <button class="tab-btn active" onclick="scrollTo('home')">~/</button>
+      <button class="tab-btn" onclick="scrollTo('about')">whoami</button>
+      <button class="tab-btn" onclick="scrollTo('skills')">skills</button>
+      <button class="tab-btn" onclick="scrollTo('projects')">ls works/</button>
+      <button class="tab-btn" onclick="scrollTo('connect')">connect</button>
+      <div class="topbar-spacer"></div>
+      <span class="topbar-prompt">
+        <span class="host">charrafi</span><span class="sep">@</span><span class="host">dev</span>
+      </span>
+    </div>
+  </nav>
 
-  <div class="relative max-w-5xl mx-auto px-6 py-12">
-    <!-- Header -->
-    <header class="flex items-center justify-between mb-16 fade-in-up stagger-1">
-      <h1 class="text-2xl font-bold ">
-        Charrafi Mohamed
-      </h1>
-      <nav class="flex items-center gap-4">
-        <a href="https://x.com/charrafimed" target="_blank" 
-           class="glass px-4 py-2  hover:bg-white/10 transition-all flex items-center gap-2 group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="group-hover:scale-110 transition-transform">
-            <path fill="currentColor" d="M8.28 20.26c7.55 0 11.68-6.26 11.68-11.67v-.53c.8-.58 1.49-1.3 2.04-2.13-.74.33-1.53.54-2.36.65.85-.5 1.5-1.32 1.8-2.28-.78.48-1.66.81-2.6 1a4.1 4.1 0 0 0-7 3.74c-3.4-.17-6.43-1.8-8.46-4.29a4.1 4.1 0 0 0 1.28 5.48c-.68-.02-1.3-.2-1.86-.5v.05a4.11 4.11 0 0 0 3.29 4.02 4 4 0 0 1-1.85.08 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.43a11.67 11.67 0 0 0 6.28 1.83"></path>
-          </svg>
-          <span class="hidden sm:inline">Follow</span>
-        </a>
-      </nav>
-    </header>
+  <div class="wrap">
 
-    <!-- Hero Section -->
-    <section class="mb-20 fade-in-up stagger-2">
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="md:w-2/3">
-          <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Software Developer
-            <span class="block bg-gradient-to-r from-blue-400 via-orange-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-              & Problem Solver
-            </span>
-          </h2>
-          <p class="text-xl text-gray-300 leading-relaxed mb-8">
-            Freelance developer from Khouribga, Morocco, specializing in elegant open-source solutions with modern web technologies. Bachelor's degree in Applied Mathematics.
+    <!-- ─── HOME ─────────────────────────────────── -->
+    <section id="home">
+      <pre class="ascii-block">
+  ██████╗██╗  ██╗ █████╗ ██████╗ ██████╗  █████╗ ███████╗██╗
+ ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██║
+ ██║     ███████║███████║██████╔╝██████╔╝███████║█████╗  ██║
+ ██║     ██╔══██║██╔══██║██╔══██╗██╔══██╗██╔══██║██╔══╝  ██║
+ ╚██████╗██║  ██║██║  ██║██║  ██║██║  ██║██║  ██║██║     ██║
+  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝</pre>
+
+      <div class="prompt" style="margin-bottom:12px;">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~</span><span class="dollar">$</span>
+        <span class="cmd">cat</span> <span class="arg">hello.txt</span>
+      </div>
+
+      <div class="output reveal" style="animation-delay:0.1s">
+        <div style="margin-bottom:12px;">
+          <span class="g">// Mohamed Charrafi</span><br>
+          <span class="dim">// Freelance Software Developer · Open-Source Author</span><br>
+          <span class="dim">// Morocco &gt; <span class="a">∀ x ∈ {web, math, devops}</span></span>
+        </div>
+        <div style="font-size:15px; color:#fff; font-weight:500; line-height:1.5; margin-bottom:14px;">
+          Building elegant, open-source solutions<br>
+          at the intersection of <span class="g">code</span> and <span class="a">mathematics</span>.
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:11px;">
+          <span style="padding:3px 10px; border:1px solid rgba(0,230,118,0.3); color:var(--green-dim);">PHP · Laravel</span>
+          <span style="padding:3px 10px; border:1px solid rgba(0,229,255,0.3); color:var(--cyan);">JS Ecosystem</span>
+          <span style="padding:3px 10px; border:1px solid rgba(255,179,0,0.3); color:var(--amber);">Applied Math</span>
+          <span style="padding:3px 10px; border:1px solid rgba(200,200,200,0.2); color:#aaa;">DevOps</span>
+          <span style="padding:3px 10px; border:1px solid rgba(200,200,200,0.15); color:#777;">4+ yrs exp</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ──────────────────────────────────── -->
+    <section id="about">
+      <div class="sec-label">whoami</div>
+
+      <div class="prompt">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~</span><span class="dollar">$</span>
+        <span class="cmd">whoami</span> <span class="flag">--verbose</span>
+      </div>
+
+      <div class="output reveal">
+        <div class="whoami-grid">
+          <span class="whoami-key">name</span>        <span class="whoami-val">Mohamed Charrafi</span>
+          <span class="whoami-key">role</span>        <span class="whoami-val">Freelance Software Developer</span>
+          <span class="whoami-key">location</span>   <span class="whoami-val">Morocco <span class="dim">🇲🇦</span></span>
+          <span class="whoami-key">education</span>  <span class="whoami-val">Graduated <span class="dim">&lt;!-- Applied Sciences --&gt;</span></span>
+          <span class="whoami-key">focus</span>       <span class="whoami-val">Open-source · Web · OSS tooling</span>
+          <span class="whoami-key">since</span>       <span class="whoami-val">2022</span>
+          <span class="whoami-key">status</span>      <span class="g">available()</span>
+        </div>
+      </div>
+
+      <div class="prompt" style="margin-top:16px;">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~</span><span class="dollar">$</span>
+        <span class="cmd">print</span><span class="flag">(</span><span class="arg">identity</span><span class="flag">)</span>
+      </div>
+
+      <div class="output reveal" style="animation-delay:0.1s">
+        <div class="math-block">
+          <span class="math-comment"># developer profile as a function</span><br>
+          <span class="math-fn">def</span> <span class="math-var">charrafi</span><span class="math-op">(</span><span class="math-val">x</span><span class="math-op">):</span><br>
+          &nbsp;&nbsp;<span class="math-comment"># maps any problem domain to elegant solution</span><br>
+          &nbsp;&nbsp;<span class="math-fn">return</span> <span class="math-var">∫</span><span class="math-op">(</span><span class="math-val">clarity</span> <span class="math-op">·</span> <span class="math-val">performance</span><span class="math-op">)</span> <span class="math-var">dx</span><br>
+          <br>
+          <span class="math-comment"># where x ∈ { PHP, JS, bash, math, DevOps }</span><br>
+          <span class="math-var">T</span> <span class="math-op">=</span> <span class="math-fn">exp</span><span class="math-op">(</span><span class="math-val">4+</span><span class="math-op">)</span> &nbsp;<span class="math-comment"># years of experience</span><br>
+          <span class="math-var">∀</span> <span class="math-val">project</span> <span class="math-op">∈</span> <span class="math-var">portfolio</span> <span class="math-op">:</span> <span class="math-fn">open_source</span><span class="math-op">(</span><span class="math-val">project</span><span class="math-op">) =</span> <span class="math-val">true</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ────────────────────────────────── -->
+    <section id="skills">
+      <div class="sec-label">skills</div>
+
+      <div class="prompt">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~</span><span class="dollar">$</span>
+        <span class="cmd">cat</span> <span class="arg">skills.json</span> <span class="flag">| jq</span>
+      </div>
+
+      <div class="output reveal">
+        <table class="skills-table">
+          <thead>
+            <tr>
+              <th style="width:160px">module</th>
+              <th style="width:130px">proficiency</th>
+              <th>notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>php / laravel</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:88%"></div></div>
+                  <span class="pct">88%</span>
+                </div>
+              </td>
+              <td class="dim">primary stack</td>
+            </tr>
+            <tr>
+              <td>js ecosystem</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:82%"></div></div>
+                  <span class="pct">82%</span>
+                </div>
+              </td>
+              <td class="dim">alpine · vite · node</td>
+            </tr>
+            <tr>
+              <td>devops</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:70%"></div></div>
+                  <span class="pct">70%</span>
+                </div>
+              </td>
+              <td class="dim">docker · ci/cd · linux</td>
+            </tr>
+            <tr>
+              <td>applied math</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:80%"></div></div>
+                  <span class="pct">80%</span>
+                </div>
+              </td>
+              <td class="dim">analysis · lin.algebra</td>
+            </tr>
+            <tr>
+              <td>bash / cli</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:75%"></div></div>
+                  <span class="pct">75%</span>
+                </div>
+              </td>
+              <td class="dim">scripting · automation</td>
+            </tr>
+            <tr>
+              <td>open-source</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-bg"><div class="bar" style="width:100%; background:var(--amber)"></div></div>
+                  <span class="pct" style="color:var(--amber);">∞</span>
+                </div>
+              </td>
+              <td class="dim">primary philosophy</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─── PROJECTS ──────────────────────────────── -->
+    <section id="projects">
+      <div class="sec-label">ls works/</div>
+
+      <div class="prompt">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~/works</span><span class="dollar">$</span>
+        <span class="cmd">ls</span> <span class="flag">-la</span> <span class="flag">--sort=impact</span>
+      </div>
+
+      <div style="margin-top:10px;">
+
+        <div class="project-card reveal" data-index="01" style="animation-delay:0.05s">
+          <div class="proj-head">
+            <a class="proj-name" href="https://sheafui.dev" target="_blank">sheaf-ui</a>
+            <span class="proj-tag tag-php">laravel</span>
+            <span class="proj-tag tag-pkg">ui-lib</span>
+          </div>
+          <p class="proj-desc">
+            Comprehensive Laravel UI library &amp; platform for building beautiful interfaces.
+            A complete component system for the Laravel ecosystem.
           </p>
-          <div class="flex flex-wrap gap-3 justify-center">
-            <span class="skill-badge glass px-4 py-2 text-sm bg-blue-500/20 text-blue-300 border border-blue-500/30">
-              PHP & Laravel
-            </span>
-            <span class="skill-badge glass px-4 py-2 text-sm bg-green-500/20 text-green-300 border border-green-500/30">
-              modern JavaScript toolings
-            </span>
-            <span class="skill-badge glass px-4 py-2 text-sm bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">
-              DevOps
-            </span>
-            <span class="skill-badge glass px-4 py-2 text-sm bg-orange-500/20 text-orange-300 border border-orange-500/30">
-              Applied Math
-            </span>
-            <span class="skill-badge glass px-4 py-2 text-sm bg-violet-500/20 text-violet-300 border border-violet-500/30">
-              + 4 years of experience 
-            </span>
+          <div class="proj-meta">
+            <span class="dim">→ </span><a href="https://sheafui.dev" target="_blank">sheafui.dev</a>
+            &nbsp;·&nbsp;
+            <img src="https://img.shields.io/packagist/dt/sheaf/cli?style=flat&labelColor=111&color=00b84d&logo=none" alt="downloads" class="badge-img" />
           </div>
         </div>
-        <div class="md:w-1/3">
-          <a href="https://x.com/charrafimed" target="_blank" class="block mx-auto">
-            <img src="/img/image.png" alt="Mohamed Charrafi" 
-                 class="profile-image w-64 h-64 object-cover glass glow hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0" />
+
+        <div class="project-card reveal" data-index="02" style="animation-delay:0.1s">
+          <div class="proj-head">
+            <a class="proj-name" href="https://convergephp.com" target="_blank" style="color:var(--amber);">converge</a>
+            <span class="proj-tag tag-php">laravel</span>
+            <span class="proj-tag tag-md">markdown</span>
+          </div>
+          <p class="proj-desc">
+            Documentation framework for Laravel — compiles Markdown into powerful, beautiful documentation sites.
+            <span class="dim">Think Docusaurus, but native to PHP.</span>
+          </p>
+          <div class="proj-meta">
+            <span class="dim">→ </span><a href="https://convergephp.com" target="_blank">convergephp.com</a>
+            &nbsp;·&nbsp;
+            <img src="https://img.shields.io/packagist/dt/convergephp/converge?style=flat&labelColor=111&color=ffb300&logo=none" alt="downloads" class="badge-img" />
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-index="03" style="animation-delay:0.15s">
+          <div class="proj-head">
+            <a class="proj-name" href="https://convergephp.com/plugins/gsm/docs/overview" target="_blank" style="color:var(--cyan);">global-search-modal</a>
+            <span class="proj-tag tag-fil">filamentphp</span>
+            <span class="proj-tag tag-pkg">package</span>
+          </div>
+          <p class="proj-desc">
+            Powerful search modal package for FilamentPHP applications.
+            Adds a ⌘K-style command palette to any Filament admin panel.
+          </p>
+          <div class="proj-meta">
+            <span class="dim">→ </span><a href="https://convergephp.com/plugins/gsm/docs/overview" target="_blank">docs</a>
+            &nbsp;·&nbsp;
+            <img src="https://img.shields.io/packagist/dt/charrafimed/global-search-modal?style=flat&labelColor=111&color=00e5ff&logo=none" alt="downloads" class="badge-img" />
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-index="04" style="animation-delay:0.2s">
+          <div class="proj-head">
+            <a class="proj-name" href="https://github.com/CharrafiMed/alpine-animation" target="_blank" style="color:#c792ea;">alpine-animation</a>
+            <span class="proj-tag tag-js">alpine.js</span>
+            <span class="proj-tag tag-pkg">npm</span>
+          </div>
+          <p class="proj-desc">
+            Animation utilities package for Alpine.js — declarative, composable transitions
+            that plug straight into your markup.
+          </p>
+          <div class="proj-meta">
+            <span class="dim">→ </span><a href="https://github.com/CharrafiMed/alpine-animation" target="_blank">github</a>
+            &nbsp;·&nbsp;
+            <img src="https://img.shields.io/npm/dt/@charrafimed/alpine-animation?style=flat&labelColor=111&color=c792ea&logo=none" alt="downloads" class="badge-img" />
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-index="0N" style="border-style:dashed; opacity:0.45; animation-delay:0.25s">
+          <div class="proj-head">
+            <span class="proj-name" style="cursor:default; color:var(--gray);">[redacted]</span>
+            <span class="proj-tag" style="color:#555;border-color:#333;">private</span>
+          </div>
+          <p class="proj-desc" style="color:#555;">
+            <span class="dim">/* confidential client work &amp; experiments */</span><br>
+            <span class="dim">// access: denied</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONNECT ───────────────────────────────── -->
+    <section id="connect">
+      <div class="sec-label">connect</div>
+
+      <div class="prompt">
+        <span class="user">charrafi</span><span class="at">@</span><span class="host">dev</span><span class="at">:</span><span class="path">~</span><span class="dollar">$</span>
+        <span class="cmd">curl</span> <span class="flag">-L</span> <span class="arg">charrafi.dev/connect</span>
+      </div>
+
+      <div class="output reveal">
+        <div class="connect-grid">
+          <a class="connect-link" href="https://github.com/CharrafiMed" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            github<span class="arrow"> →</span>
+          </a>
+          <a class="connect-link" href="https://x.com/charrafimed" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.28 20.26c7.55 0 11.68-6.26 11.68-11.67v-.53c.8-.58 1.49-1.3 2.04-2.13-.74.33-1.53.54-2.36.65.85-.5 1.5-1.32 1.8-2.28-.78.48-1.66.81-2.6 1a4.1 4.1 0 0 0-7 3.74c-3.4-.17-6.43-1.8-8.46-4.29a4.1 4.1 0 0 0 1.28 5.48c-.68-.02-1.3-.2-1.86-.5v.05a4.11 4.11 0 0 0 3.29 4.02 4 4 0 0 1-1.85.08 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.43a11.67 11.67 0 0 0 6.28 1.83"/></svg>
+            twitter / x<span class="arrow"> →</span>
+          </a>
+          <a class="connect-link" href="https://packagist.org/packages/charrafimed/" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            packagist<span class="arrow"> →</span>
           </a>
         </div>
-      </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="mb-20 fade-in-up stagger-3">
-      <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
-        <span class="text-blue-400">#</span>
-        <span>Technical Works</span>
-      </h3>
-      <div class="grid gap-6">
-        <!-- Project 1 -->
-        <div class="project-card glass  p-6 hover:border-blue-500/50">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-            <h4 class="text-xl font-semibold">
-              <a href="https://sheafui.dev" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
-                Sheaf UI
-              </a>
-            </h4>
-            <img src="https://img.shields.io/packagist/dt/sheaf/cli" alt="Downloads" class="h-5 shrink-0 w-fit" />
-          </div>
-          <p class="text-gray-300">A comprehensive Laravel UI library/platform for building beautiful interfaces</p>
-          <div class="mt-4 flex gap-2">
-            <span class="text-xs px-2 py-1 -500/20 text-blue-300">Laravel</span>
-            <span class="text-xs px-2 py-1 -500/20 text-green-300">UI Library</span>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card glass  p-6 hover:border-orange-500/50">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-            <h4 class="text-xl font-semibold">
-              <a href="https://convergephp.com" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">
-                Converge
-              </a>
-            </h4>
-            <img src="https://img.shields.io/packagist/dt/convergephp/converge" alt="Downloads" class="h-5 shrink-0 w-fit" />
-          </div>
-          <p class="text-gray-300">Documentation framework for Laravel that compiles Markdown into powerful documentation sites</p>
-          <div class="mt-4 flex gap-2">
-            <span class="text-xs px-2 py-1 -500/20 text-orange-300">Laravel</span>
-            <span class="text-xs px-2 py-1 -500/20 text-pink-300">Markdown</span>
-          </div>
-        </div>
-
-          <!-- Project 3 -->
-        <div class="project-card glass  p-6 hover:border-green-500/50">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-            <h4 class="text-xl font-semibold">
-              <a href="https://convergephp.com/plugins/gsm/docs/overview" target="_blank" class="text-green-400 hover:text-green-300 transition-colors">
-                Global Search Modal
-              </a>
-            </h4>
-            <img src="https://img.shields.io/packagist/dt/charrafimed/global-search-modal" alt="Downloads" class="h-5 shrink-0 w-fit" />
-          </div>
-          <p class="text-gray-300">Powerful search modal package for FilamentPHP applications</p>
-          <div class="mt-4 flex gap-2">
-            <span class="text-xs px-2 py-1 -500/20 text-green-300">FilamentPHP</span>
-            <span class="text-xs px-2 py-1 -500/20 text-yellow-300">Package</span>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card glass  p-6 hover:border-yellow-500/50">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-            <h4 class="text-xl font-semibold">
-              <a href="https://github.com/CharrafiMed/alpine-animation" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">
-                Alpine Animation
-              </a>
-            </h4>
-            <img src="https://img.shields.io/npm/dt/@charrafimed/alpine-animation" alt="Downloads" class="h-5 shrink-0 w-fit" />
-          </div>
-          <p class="text-gray-300">Animation utilities package for Alpine.js applications</p>
-          <div class="mt-4 flex gap-2">
-            <span class="text-xs px-2 py-1 -500/20 text-yellow-300">Alpine.js</span>
-            <span class="text-xs px-2 py-1 -500/20 text-blue-300">Animation</span>
-          </div>
-        </div>
-
-        <!-- Private Projects -->
-        <div class="project-card glass  p-6 border-dashed">
-          <h4 class="text-xl font-semibold text-gray-400 mb-2">Private Projects</h4>
-          <p class="text-gray-500">Various confidential client work and experimental projects</p>
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border); font-size:12px; color:var(--gray);">
+          <span class="dim">status:</span>
+          <span class="g"> ● open to freelance &amp; OSS collaboration</span>
         </div>
       </div>
     </section>
 
-    <!-- Profiles Section -->
-    <section class="mb-20 fade-in-up stagger-4">
-      <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
-        <span class="text-orange-400">#</span>
-        <span>Connect With Me</span>
-      </h3>
-      <div class="flex flex-wrap gap-4">
-        <a href="https://github.com/CharrafiMed" target="_blank" 
-           class="glass px-6 py-3  hover:bg-white/10 transition-all flex items-center gap-3 group">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-          <span class="group-hover:text-blue-400 transition-colors">GitHub</span>
-        </a>
+    <!-- ─── FOOTER ────────────────────────────────── -->
+    <footer class="footer">
+      <div class="prompt-line">
+        <span class="user">charrafi</span><span class="at" style="color:#555">@</span><span style="color:var(--cyan)">dev</span><span style="color:#555">:</span><span style="color:var(--amber)">~</span><span style="color:#aaa">$</span>
+        <span class="blink"></span>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="fade-in-up stagger-5 text-center text-gray-500 text-sm py-8 border-t border-white/10">
-      <p>2022 - <span id="currentYear"></span> © Mohamed Charrafi.</p>
+      <div style="margin-top:12px; color:#444; font-size:11px;">
+        © 2022–<span id="yr"></span> Mohamed Charrafi &nbsp;·&nbsp; All open-source, all the time.
+      </div>
     </footer>
+
   </div>
 
   <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let followerX = 0;
-    let followerY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-    });
-    
-    // Smooth follower animation
-    function animateFollower() {
-      const dx = mouseX - followerX;
-      const dy = mouseY - followerY;
-      
-      followerX += dx * 0.1;
-      followerY += dy * 0.1;
-      
-      cursorFollower.style.left = followerX + 'px';
-      cursorFollower.style.top = followerY + 'px';
-      
-      requestAnimationFrame(animateFollower);
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function scrollTo(id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
     }
-    animateFollower();
-    
-    // Hover effect for interactive elements
-    const hoverElements = document.querySelectorAll('a, button, .project-card');
-    
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorFollower.classList.add('hover');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          document.querySelectorAll('.tab-btn').forEach((b, i) => {
+            const map = ['home','about','skills','projects','connect'];
+            b.classList.toggle('active', map[i] === id);
+          });
+        }
       });
-      
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorFollower.classList.remove('hover');
-      });
+    }, { threshold: 0.3 });
+
+    ['home','about','skills','projects','connect'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      const base = parseFloat(el.style.animationDelay || '0');
+      el.style.animationDelay = (base + 0.05) + 's';
     });
   </script>
 </body>
